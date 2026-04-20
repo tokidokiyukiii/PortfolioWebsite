@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width,initial scale=1.0">
         <title>Portfolio</title>
         <link rel="stylesheet" href="./css/style.css">
+        <script src="./js/experiences.js"></script>
     </head>
     <body>
         <header>
@@ -27,15 +28,38 @@
             </section>
             <section>
                 <h2 id="centering">Featured Projects</h2>
-                <div class="roller">
-                    <img 
-                        src="./assets/Marshmallow bears.jpg"
-                        alt="featured projects"
-                        class="image"
-                        >
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui</p>
+                <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-slide">
+                    <img src="/assets/experiences/gemoto.jpg" alt="employment 1">
+                    <div class="carousel-caption">
+                        <h3>Gemoto</h3>
+                        <p>Onhand Coding Experience</p>
+                    </div>
+                    </div>
+                    <div class="carousel-slide">
+                    <img src="/assets/experiences/asian herbivore.jpg" alt="employment 2">
+                    <div class="carousel-caption">
+                        <h3>Asian Herbivore</h3>
+                        <p>Multitasking services with online and offline customers</p>
+                    </div>
+                    </div>
+                    <div class="carousel-slide">
+                    <img src="/assets/experiences/de chen.jpg" alt="employment 3">
+                    <div class="carousel-caption">
+                        <h3>De Chen Nougats</h3>
+                        <p>Effective communication training</p>
+                    </div>
+                    </div>
                 </div>
                 
+                <!-- Navigation Buttons -->
+                <button class="carousel-btn prev" aria-label="Previous slide">❮</button>
+                <button class="carousel-btn next" aria-label="Next slide">❯</button>
+                
+                <!-- Dots Indicator -->
+                <div class="carousel-dots"></div>
+                </div>
             </section>
         </main>
         <footer>

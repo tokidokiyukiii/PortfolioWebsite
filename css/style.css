@@ -48,6 +48,8 @@ header nav ul {
   background: #6a1e1e;
   padding: 1rem 0;
   border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px #2c2c2c;
 }
 
 header nav ul li a {
@@ -92,6 +94,9 @@ footer {
     max-width: 100%;
     height: auto;
     width: auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px #2c2c2c;
 }
 .heroText{
     flex: 1;
@@ -116,3 +121,115 @@ footer {
     width: 800px;
     height: auto;
 }
+
+/* Carousel Container */
+.carousel-container {
+  position: relative;
+  max-width: 900px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px #2c2c2c;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Caption Overlay */
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, #2c2c2c, transparent);
+  color: #f9f6f2;
+  padding: 40px 20px 20px;
+}
+
+.carousel-caption h3 {
+  font-family: 'Bodoni', serif;
+  font-size: 32px;
+  margin: 0 0 8px;
+}
+
+.carousel-caption p {
+  margin: 0;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* Navigation Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #a67b5b;
+  color: #f9f6f2;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background: #a67b5b;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev {
+  left: 20px;
+}
+
+.carousel-btn.next {
+  right: 20px;
+}
+
+/* Dots Indicator */
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #2c2c2c;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: #a67b5b;
+  width: 30px;
+  border-radius: 6px;
+}
+
+.carousel-dot:hover {
+  background: #f9f6f2;
+}
+
