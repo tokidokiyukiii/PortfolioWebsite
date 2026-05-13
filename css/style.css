@@ -39,6 +39,9 @@ header, main, footer{
     max-width: 900px;
     margin: 0 auto;
 }
+#centering{
+  text-align: center;
+}
 
 /* -------------------- HEADER -------------------- */
 
@@ -152,15 +155,13 @@ header nav ul li a.active {
 
 /* -------------------- COLUMN BODY -------------------- */
 
-.heroImage{
-    padding: 40px 0px;
-    display: flex;
-    align-items: center;
-    gap: 60px;
-}
-.heroImage > * {
-    flex: 1;
-    min-width: 0; 
+/* Two-column layout*/
+.heroImage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+  margin: 60px 0;
 }
 .heroImage .image {
     max-width: 100%;
@@ -170,36 +171,33 @@ header nav ul li a.active {
     border-radius: 12px;
     box-shadow: 0 4px 12px #2c2c2c;
 }
-.heroText{
-    flex: 1;
-}
-.heroImage {
-  cursor: pointer; /* optional: signals interactivity */
-}
-.heroImage .image {
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-.heroText {
-  transition: transform 0.35s ease;
-}
-.heroImage:hover .image {
-  transform: translateX(4px) scale(1.015);
-  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.3);
-}
-.heroImage:hover .heroText {
-  transform: translateX(10px);
-}
-
-
-
-.banners{
+.heroImage .logo {
+    max-width: 75%;
+    height: auto;
+    width: auto;
+    overflow: hidden;
+    border-radius: 12px;
     align-items: center;
-    text-align: center;
-    padding: 40px 0px;
+    justify-self: center;
 }
-
-.roller{
-    text-align: center;
+/* Banner Images*/
+.banners, .genshin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+    width: 100%;
+    margin: 60px 0px;
+}
+.genshin{
+  margin: 0;
+}
+.banners .image, .genshin .image {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    border-radius: 12px;
 }
 
 /* -------------------- SOCIAL MEDIA DOCK -------------------- */
@@ -296,19 +294,6 @@ header nav ul li a.active {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
-}
-
-
-
-/*image types*/
-
-.image{
-    width: 400px;
-    height: auto;
-}
-.banner{
-    width: 800px;
-    height: auto;
 }
 
 /* -------------------- Carousel -------------------- */
