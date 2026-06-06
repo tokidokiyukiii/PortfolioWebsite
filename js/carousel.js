@@ -1,14 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Grab ALL carousel containers on the page
   const containers = document.querySelectorAll('.carousel-container');
-  
-  // We'll use this to track which carousel the user is hovering over (for keyboard nav)
   let activeCarousel = null;
 
-  // 2. Loop through each container and initialize it independently
   containers.forEach(container => {
+    // Prevent multiple initializations
+    if (container.dataset.initialized) return;
+    container.dataset.initialized = 'true';
     
-    // 3. Scope all queries to the CURRENT container only!
     const carousel = container.querySelector('.carousel');
     const slides = container.querySelectorAll('.carousel-slide');
     const prevBtn = container.querySelector('.carousel-btn.prev');
@@ -19,8 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let currentIndex = 0;
     const totalSlides = slides.length;
-    
-    // Create dots (scoped to this specific container)
+
+    // Create dots
     slides.forEach((_, i) => {
       const dot = document.createElement('button');
       dot.classList.add('carousel-dot');
@@ -30,13 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
       dotsContainer.appendChild(dot);
     });
     
-    // Grab the dots we just created, scoped to this container
     const dots = dotsContainer.querySelectorAll('.carousel-dot'); 
     
     function updateCarousel() {
       carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-      
-      // Update dots (scoped)
       dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === currentIndex);
       });
@@ -57,12 +52,19 @@ document.addEventListener('DOMContentLoaded', () => {
       updateCarousel();
     }
     
+    // Autoplay
+    let autoplayInterval;
+    
+    function startAutoplay() {
+      autoplayInterval = setInterval(nextSlide, 5000);
+    }
+    
     function resetAutoplay() {
       clearInterval(autoplayInterval);
       startAutoplay();
     }
     
-    // Event listeners for buttons
+    // Buttons
     nextBtn.addEventListener('click', () => {
       nextSlide();
       resetAutoplay();
@@ -73,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
       resetAutoplay();
     });
     
-    // Touch/Swipe support
+    // Touch/Swipe
     let touchStartX = 0;
     let touchEndX = 0;
     
@@ -92,25 +94,20 @@ document.addEventListener('DOMContentLoaded', () => {
       
       if (Math.abs(diff) > swipeThreshold) {
         if (diff > 0) {
-          nextSlide(); // Swipe left
+          nextSlide();
         } else {
-          prevSlide(); // Swipe right
+          prevSlide();
         }
         resetAutoplay();
       }
     }
     
-    // Autoplay
-    let autoplayInterval;
+    // Pause on hover
+    const instance = { nextSlide, prevSlide, resetAutoplay };
     
-    function startAutoplay() {
-      autoplayInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
-    }
-    
-    // Pause on hover (scoped to this specific container)
     container.addEventListener('mouseenter', () => {
       clearInterval(autoplayInterval);
-      activeCarousel = instance; // Mark this carousel as "active" for keyboard navigation
+      activeCarousel = instance;
     });
     
     container.addEventListener('mouseleave', () => {
@@ -118,15 +115,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (activeCarousel === instance) activeCarousel = null;
     });
     
-    // Store this specific instance's functions so the global keyboard listener can use them
-    const instance = { nextSlide, prevSlide, resetAutoplay };
-    
-    // Initialize autoplay for this specific carousel
+    // Initialize autoplay
     startAutoplay();
   });
 
   // Global Keyboard navigation 
-  // (Updated: This now ONLY controls the carousel you are currently hovering your mouse over!)
   document.addEventListener('keydown', (e) => {
     if (activeCarousel) {
       if (e.key === 'ArrowLeft') {

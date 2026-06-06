@@ -409,6 +409,9 @@ header nav ul li a.active {
   scroll-margin-top: 30vh;
   scroll-behavior: smooth;
 }
+.mlbb-carousel .carousel-slide img {
+    height: 300px;
+}
 
 /* -------------------- Button -------------------- */
 .contact-btn {
