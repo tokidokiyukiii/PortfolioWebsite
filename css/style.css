@@ -409,9 +409,13 @@ header nav ul li a.active {
   scroll-margin-top: 30vh;
   scroll-behavior: smooth;
 }
-.mlbb-carousel .carousel-slide img {
+.small-carousel .carousel-slide img {
     height: 300px;
 }
+.medium-carousel .carousel-slide img {
+    height: 400px;
+}
+
 
 /* -------------------- Button -------------------- */
 .contact-btn {
@@ -437,3 +441,89 @@ header nav ul li a.active {
   outline-offset: 2px;
 }
 
+/* -------------------- Accordion -------------------- */
+.accordion-item {
+    border: 1px solid #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    background: #f8f9fa;
+    transition: box-shadow 0.2s ease;
+}
+
+.accordion-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 16px 20px;
+    background: #a67b5b;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s ease;
+}
+
+.accordion-header:hover {
+    background: #fc3;
+}
+
+.accordion-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c2c2c;
+}
+
+.accordion-icon {
+    font-size: 18px;
+    color: #2c2c2c;
+    transition: transform 0.3s ease;
+    line-height: 1;
+}
+
+.accordion-header[aria-expanded="true"] .accordion-icon {
+    transform: rotate(180deg);
+}
+
+/* Preview is always visible */
+.accordion-preview {
+    padding: 16px 20px;
+    margin: 0;
+    line-height: 1.7;
+    color: #555;
+    font-style: italic;
+    background: #f9f6f2;
+    border-top: 1px solid #e9ecef;
+}
+
+/* Full text is hidden by default */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    background: #f9f6f2;
+}
+
+.accordion-content p {
+    padding: 16px 20px;
+    margin: 0;
+    line-height: 1.7;
+    color: #2c2c2c;
+}
+
+/* Hide preview when expanded */
+.accordion-header[aria-expanded="true"] ~ .accordion-preview {
+    display: none;
+}
+#preview{
+  color: #a67b5b;
+  padding-bottom: 0;
+}
+#expand{
+  padding-top: 0;
+}
