@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('navbar-placeholder');
   if (!container) return;
 
-  // 🔹 Inject your exact navbar HTML
   container.innerHTML = `
     <header>
       <nav>
@@ -17,19 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
     </header>
   `;
 
-  // 🔹 Auto-highlight the current page
   const currentPath = window.location.pathname;
   const links = container.querySelectorAll('nav ul li a');
   
   links.forEach(link => {
     const href = link.getAttribute('href');
-    // Matches both root (/index.html) and /pages/*.html
     if (currentPath.endsWith(href)) {
       link.classList.add('active');
     }
   });
 
-  // Fallback for when URL is just "/" (common with local servers)
   if (currentPath === '/' || currentPath === '/index.html') {
     const homeLink = container.querySelector('a[href="index.html"]');
     if (homeLink) homeLink.classList.add('active');

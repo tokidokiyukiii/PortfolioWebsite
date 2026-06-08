@@ -90,13 +90,13 @@ header nav ul li a.active {
   gap: 32px;
 }
 .footer-section h3 {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
   color: #f9f6f2;
   margin-bottom: 12px;
 }
 .footer-section p,ul {
-  font-size: 14px;
+  font-size: 20px;
   color: #f9f6f2;
   line-height: 1.6;
   margin: 0;
@@ -172,6 +172,12 @@ header nav ul li a.active {
     overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 4px 12px #2c2c2c;
+}
+.columnImage .map{
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    overflow: hidden;
 }
 .columnImage .logo {
     max-width: 75%;
@@ -439,6 +445,39 @@ header nav ul li a.active {
 .contact-btn:focus {
   outline: 2px solid #fc3;
   outline-offset: 2px;
+}
+
+/* -------------------- Tooltip -------------------- */
+.custom-tooltip {
+  position: absolute;
+  background-color: #a67b5b;
+  color: #f9f6f2;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  pointer-events: none; 
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 9999;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-tooltip.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.custom-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #a67b5b transparent transparent transparent;
 }
 
 /* -------------------- Accordion -------------------- */

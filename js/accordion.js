@@ -7,13 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const content = preview.nextElementSibling;
             const isOpen = header.getAttribute('aria-expanded') === 'true';
             
-            // Toggle the clicked accordion
             if (isOpen) {
-                // Close it
                 header.setAttribute('aria-expanded', 'false');
                 content.style.maxHeight = null;
             } else {
-                // Close all other accordions first
                 document.querySelectorAll('.accordion-header').forEach(otherHeader => {
                     if (otherHeader !== header) {
                         otherHeader.setAttribute('aria-expanded', 'false');
@@ -23,9 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
                 
-                // Open this one
                 header.setAttribute('aria-expanded', 'true');
-                // Force reflow to ensure smooth animation
                 content.style.maxHeight = content.scrollHeight + 'px';
             }
         });
