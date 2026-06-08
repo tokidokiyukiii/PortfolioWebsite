@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
     <header>
       <nav>
         <ul>
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="../pages/about.html">About Me</a></li>
-          <li><a href="../pages/studies.html">Studies</a></li>
-          <li><a href="../pages/experiences.html">Experiences</a></li>
-          <li><a href="../pages/hobbies.html">Hobbies</a></li>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/pages/about.html">About Me</a></li>
+          <li><a href="/pages/studies.html">Studies</a></li>
+          <li><a href="/pages/experiences.html">Experiences</a></li>
+          <li><a href="/pages/hobbies.html">Hobbies</a></li>
         </ul>
       </nav>
     </header>
