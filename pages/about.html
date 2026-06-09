@@ -11,27 +11,40 @@
         <header>
             <div id="navbar-placeholder"></div>
             <script src="../js/navbar.js"></script>
+            <script src="../js/accordion.js"></script>
         </header>
         <main>
             <section id="abouts">
                 <h1 id="centering">About Me</h1>
                 <div class="columnImage">
                     <div class="columnText">
-                        <p>Hi, I'm Karen! I study BEngSc Digital Arts at Wits, which is the kind of degree that takes a full sentence to explain but makes complete sense once you do. 
+                        <div class="accordion-item">
+                            <button class="accordion-header" aria-expanded="false">
+                                <h3>Hi! I'm Karen</h3>
+                                <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                            </button>
+                            <p class="accordion-preview">I study BEngSc Digital Arts at Wits, which is the kind of degree that takes a full sentence to explain but makes complete sense once you do. 
                             It's a collaboration between the School of Electrical and Information Engineering and the Wits School of Arts — so one week I'm doing circuits and signal 
-                            processing, and the next I'm designing game mechanics and thinking about what makes an interaction feel good. Three years in, those two halves have stopped 
-                            feeling like separate things. Which I think is the whole point.<br>
-                            I care a lot about how things feel to use. Not just how they look, not just whether they work but whether the person using them has to think hard, get confused 
-                            or gives up halfway. That's the problem I'm always trying to solve, whether I'm designing a game mechanic, building a webpage or training 
-                            microprocessors in the electronics lab. <br>
-                            When I'm not studying or building something, I'm probably gaming, crocheting or drawing characters that'll never make it into an actual game.
-                            All three have made me better at my work in ways I didn't expect.
-                        </p>
+                            processing, and the next I'm designing game mechanics and thinking about what makes an interaction feel good. Three years in...</p>
+                            <div class="accordion-content">
+                                <p id="preview">I study BEngSc Digital Arts at Wits, which is the kind of degree that takes a full sentence to explain but makes complete sense once you do. 
+                            It's a collaboration between the School of Electrical and Information Engineering and the Wits School of Arts — so one week I'm doing circuits and signal 
+                            processing, and the next I'm designing game mechanics and thinking about what makes an interaction feel good. Three years in,</p>
+                                <p id="expand"> those two halves have stopped feeling like separate things. Which I think is the whole point.<br>
+                                    I care a lot about how things feel to use. Not just how they look, not just whether they work but whether the person using them has to think hard, get confused 
+                                    or gives up halfway. That's the problem I'm always trying to solve, whether I'm designing a game mechanic, building a webpage or training 
+                                    microprocessors in the electronics lab. <br>
+                                    When I'm not studying or building something, I'm probably gaming, crocheting or drawing characters that'll never make it into an actual game.
+                                    All three have made me better at my work in ways I didn't expect.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                     <img
-                        src="../assets/duck.JPG"
-                        alt="Me"
+                        src="../assets/about/me.png"
+                        alt="me 21st birthday"
                         class="image"
+                        reference="Photographby Karen Cheng"
                         >
                 </div>
                 <h2 id="centering">Where I come from</h2>
