@@ -38,13 +38,4 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     </footer>
   `;
-  const icons = container.querySelectorAll('.social-icon');
-  icons.forEach(icon => {
-    icon.addEventListener('mouseenter', (e) => {
-      e.currentTarget.style.transform = 'translateY(-10px) scale(1.2)';
-    });
-    icon.addEventListener('mouseleave', (e) => {
-      e.currentTarget.style.transform = 'translateY(0) scale(1)';
-    });
-  });
 });
